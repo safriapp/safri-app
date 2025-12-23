@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>تحميل تطبيق سفري | Safri</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script>
+    window.onload = function () {
+      var userAgent = navigator.userAgent  navigator.vendor  window.opera;
+
+      if (/android/i.test(userAgent)) {
+        window.location.href = "https://play.google.com/store/apps/details?id=com.safriapp.safri_iq_user&pcampaignid=web_share";
+      } 
+      else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.href = "https://apps.apple.com/iq/app/%D8%B3%D9%81%D8%B1%D9%8A-%D8%A7%D9%84%D8%B7%D8%B9%D8%A7%D9%85-%D9%88%D8%A7%D9%84%D8%A8%D9%82%D8%A7%D9%84%D8%A9-%D9%88%D8%BA%D9%8A%D8%B1-%D9%87/id6739849902?l=ar";
+      } 
+      else {
+        document.getElementById("fallback").style.display = "block";
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 60px;
+      background-color: #ffffff;
+      direction: rtl;
+    }
+    h2 {
+      margin-bottom: 30px;
+    }
+    a {
+      display: block;
+      margin: 15px auto;
+      padding: 12px;
+      width: 220px;
+      font-size: 18px;
+      color: #ffffff;
+      background-color: #000000;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>📱 حمّل تطبيق سفري | Safri</h2>
+
+  <div id="fallback" style="display:none;">
+    <a href="https://play.google.com/store/apps/details?id=com.safriapp.safri_iq_user&pcampaignid=web_share">📱 تحميل للأندرويد</a>
+    <a href="https://apps.apple.com/iq/app/%D8%B3%D9%81%D8%B1%D9%8A-%D8%A7%D9%84%D8%B7%D8%B9%D8%A7%D9%85-%D9%88%D8%A7%D9%84%D8%A8%D9%82%D8%A7%D9%84%D8%A9-%D9%88%D8%BA%D9%8A%D8%B1-%D9%87/id6739849902?l=ar">🍎 تحميل للآيفون</a>
+  </div>
+
+</body>
+</html>
