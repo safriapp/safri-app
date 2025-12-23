@@ -8,30 +8,37 @@
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      padding-top: 60px;
+      padding-top: 50px;
       background-color: #ffffff;
       direction: rtl;
     }
     h2 {
       margin-bottom: 30px;
     }
-    a {
-      display: block;
-      margin: 15px auto;
-      padding: 12px;
-      width: 220px;
-      font-size: 18px;
-      color: #ffffff;
-      background-color: #000000;
-      text-decoration: none;
-      border-radius: 8px;
+    .store-btn {
+      display: inline-block;
+      margin: 15px;
+      width: 200px; /* حجم الصورة */
+      transition: transform 0.2s;
+    }
+    .store-btn:hover {
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
+
   <h2>📱 حمّل تطبيق سفري | Safri</h2>
 
-  <a href="https://play.google.com/store/apps/details?id=com.safriapp.safri_iq_user&pcampaignid=web_share" target="_blank">📱 تحميل للأندرويد</a>
-  <a href="https://apps.apple.com/iq/app/%D8%B3%D9%81%D8%B1%D9%8A-%D8%A7%D9%84%D8%B7%D8%B9%D8%A7%D9%85-%D9%88%D8%A7%D9%84%D8%A8%D9%82%D8%A7%D9%84%D8%A9-%D9%88%D8%BA%D9%8A%D8%B1-%D9%87/id6739849902?l=ar" target="_blank">🍎 تحميل للآيفون</a>
+  <!-- Google Play -->
+  <a href="https://play.google.com/store/apps/details?id=com.safriapp.safri_iq_user&pcampaignid=web_share" target="_blank">
+    <img class="store-btn" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="تحميل من Google Play">
+  </a>
+
+  <!-- App Store -->
+  <a href="https://apps.apple.com/iq/app/%D8%B3%D9%81%D8%B1%D9%8A-%D8%A7%D9%84%D8%B7%D8%B9%D8%A7%D9%85-%D9%88%D8%A7%D9%84%D8%A8%D9%82%D8%A7%D9%84%D8%A9-%D9%88%D8%BA%D9%8A%D8%B1-%D9%87/id6739849902?l=ar" target="_blank">
+    <img class="store-btn" src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="تحميل من App Store">
+  </a>
+
 </body>
 </html>
