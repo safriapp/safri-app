@@ -1,62 +1,118 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>تحميل تطبيق سفري | Safri</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>تطبيق سفري | توصيل الطعام والبقالة</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <meta name="description" content="تطبيق سفري لتوصيل الطعام والبقالة بسرعة. مطاعم قريبة، عروض يومية، وتوصيل لباب البيت.">
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
     body {
-      font-family: Arial, sans-serif;
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(135deg, #ff3131, #ff6a6a);
+      color: #ffffff;
       text-align: center;
-      padding-top: 50px;
-      background-color: #ffffff;
-      direction: rtl;
     }
-    h2 {
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .logo {
+      width: 110px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.8;
       margin-bottom: 30px;
     }
-    .store-btn {
-      display: inline-block;
-      margin: 15px;
-      width: 200px; /* حجم الصورة */
+
+    .features {
+      text-align: right;
+      background: rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .features li {
+      list-style: none;
+      margin: 10px 0;
+      font-size: 17px;
+    }
+
+    .store-buttons img {
+      width: 200px;
+      margin: 12px;
       transition: transform 0.2s;
     }
-    .store-btn:hover {
+
+    .store-buttons img:hover {
       transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      opacity: 0.8;
     }
   </style>
 </head>
+
 <body>
 
-  <h2>📱 حمّل تطبيق سفري </h2>
-<h2> �🔥 جوعان؟ سفري وياك!
+  <div class="container">
 
-بعد لا تدوّر مطاعم هواي 😌
-كل شي تريده موجود بتطبيق سفري 
+    <!-- لوغو (اختياري) -->
+    <!-- <img src="logo.png" alt="Safri Logo" class="logo"> -->
 
-📱 اطلب أكلَك وأنت مرتاح
-🍕 مطاعم قريبة منك
-🚴‍♂️ توصيل سريع
-💸 عروض تخبل يومياً
+    <h1>🍔 تطبيق سفري</h1>
 
-👇 لا تضيع وقتك
-حمّل سفري هسه وخلي طلبك يوصلك لباب البيت</h2>
-  <!-- Google Play -->
-  <a href="https://play.google.com/store/apps/details?id=com.safriapp.safri_iq_user&pcampaignid=web_share" target="_blank">
-    <img class="store-btn" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfr5fBEY_g6YIxxKpAZ4q6TP5fQYMbCHvztg&s" alt="تحميل من Google Play">
-  </a>
+    <p>
+      جوعان؟ 😋<br>
+      سفري وياك وين ما تكون!  
+      اطلب أكلَك وبقالتك بكل سهولة وخلي الباقي علينا 🚴‍♂️
+    </p>
 
-  <!-- App Store -->
-  <a href="https://apps.apple.com/iq/app/%D8%B3%D9%81%D8%B1%D9%8A-%D8%A7%D9%84%D8%B7%D8%B9%D8%A7%D9%85-%D9%88%D8%A7%D9%84%D8%A8%D9%82%D8%A7%D9%84%D8%A9-%D9%88%D8%BA%D9%8A%D8%B1-%D9%87/id6739849902?l=ar" target="_blank">
-    <img class="store-btn" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRASYNSiQOYGx60r_L504g-laUqJ96VKxDRFg&s" alt="تحميل من App Store">
-  </a>
+    <ul class="features">
+      <li>🍕 مطاعم قريبة منك</li>
+      <li>🛒 بقالة واحتياجات يومية</li>
+      <li>🚀 توصيل سريع</li>
+      <li>💸 عروض يومية مميزة</li>
+    </ul>
+
+    <div class="store-buttons">
+      <!-- Google Play -->
+      <a href="https://play.google.com/store/apps/details?id=com.safriapp.safri_iq_user" target="_blank" rel="noopener">
+        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/ar_badge_web_generic.png" alt="Google Play">
+      </a>
+
+      <!-- App Store -->
+      <a href="https://apps.apple.com/iq/app/id6739849902" target="_blank" rel="noopener">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store">
+      </a>
+    </div>
+
+    <footer>
+      ©️ 2025 Safri App – جميع الحقوق محفوظة
+    </footer>
+
+  </div>
 
 </body>
 </html>
-
-
-
-
-
-
-
