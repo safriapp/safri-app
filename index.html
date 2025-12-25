@@ -1,118 +1,36 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <title>تطبيق سفري | توصيل الطعام والبقالة</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- SEO -->
-  <meta name="description" content="تطبيق سفري لتوصيل الطعام والبقالة بسرعة. مطاعم قريبة، عروض يومية، وتوصيل لباب البيت.">
-  
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Cairo', sans-serif;
-      background: linear-gradient(135deg, #ff3131, #ff6a6a);
-      color: #ffffff;
-      text-align: center;
-    }
-
-    .container {
-      max-width: 600px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    .logo {
-      width: 110px;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 1.8;
-      margin-bottom: 30px;
-    }
-
-    .features {
-      text-align: right;
-      background: rgba(255,255,255,0.15);
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 30px;
-    }
-
-    .features li {
-      list-style: none;
-      margin: 10px 0;
-      font-size: 17px;
-    }
-
-    .store-buttons img {
-      width: 200px;
-      margin: 12px;
-      transition: transform 0.2s;
-    }
-
-    .store-buttons img:hover {
-      transform: scale(1.05);
-    }
-
-    footer {
-      margin-top: 40px;
-      font-size: 14px;
-      opacity: 0.8;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>مسح QR</title>
+<style>
+body { font-family: Tahoma; text-align:center; background:#f5f5f5; }
+video { width: 100%; max-width: 480px; border: 1px solid #ccc; border-radius: 10px; }
+</style>
 </head>
-
 <body>
+<h2>توجيه الباركود</h2>
+<video id="preview"></video>
+<p id="info"></p>
 
-  <div class="container">
+<script type="module">
+import QrScanner from "https://cdn.jsdelivr.net/npm/qr-scanner@1.4.2/qr-scanner.min.js";
 
-    <!-- لوغو (اختياري) -->
-    <!-- <img src="logo.png" alt="Safri Logo" class="logo"> -->
+const videoElem = document.getElementById('preview');
+const info = document.getElementById('info');
 
-    <h1>🍔 تطبيق سفري</h1>
+const scanner = new QrScanner(videoElem, result => {
+    info.textContent = 'تم قراءة الرابط: ' + result;
+    window.location.href = result; // التحويل تلقائي للرابط
+});
 
-    <p>
-      جوعان؟ 😋<br>
-      سفري وياك وين ما تكون!  
-      اطلب أكلَك وبقالتك بكل سهولة وخلي الباقي علينا 🚴‍♂️
-    </p>
+QrScanner.hasCamera().then(hasCamera => {
+    if (!hasCamera) info.textContent = "الكاميرا غير متوفرة";
+});
 
-    <ul class="features">
-      <li>🍕 مطاعم قريبة منك</li>
-      <li>🛒 بقالة واحتياجات يومية</li>
-      <li>🚀 توصيل سريع</li>
-      <li>💸 عروض يومية مميزة</li>
-    </ul>
-
-    <div class="store-buttons">
-      <!-- Google Play -->
-      <a href="https://play.google.com/store/apps/details?id=com.safriapp.safri_iq_user" target="_blank" rel="noopener">
-        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/ar_badge_web_generic.png" alt="Google Play">
-      </a>
-
-      <!-- App Store -->
-      <a href="https://apps.apple.com/iq/app/id6739849902" target="_blank" rel="noopener">
-        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store">
-      </a>
-    </div>
-
-    <footer>
-      ©️ 2025 Safri App – جميع الحقوق محفوظة
-    </footer>
-
-  </div>
-
+scanner.start().catch(err => {
+    info.textContent = "لا يمكن الوصول للكاميرا. تأكد من HTTPS أو localhost. " + err;
+});
+</script>
 </body>
 </html>
